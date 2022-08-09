@@ -1,9 +1,8 @@
 const express = require('express');
-const rotasProdutos = require('./rotas/rotasProdutos');
+const rotasProdutos = require('../express/rotas/rotasProduto');
 let app = express();
 
 //console.log(app)
-
 
 //routing response
 app.get('/', (req,res)=>res.send("Olá mundo"));
