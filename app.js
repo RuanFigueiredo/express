@@ -1,14 +1,20 @@
+//importando o express
 const express = require('express');
-const rotasProdutos = require('../express/rotas/rotasProduto');
+const res = require('express/lib/response');
+//const req = require('express/lib/request');
+
 let app = express();
 
-//console.log(app)
 
-//routing response
+//routing response ou resposta da rota
 app.get('/', (req,res)=>res.send("Olá mundo"));
-app.get('./contato', (req,res)=>res.send("página de contatos"));
+app.get('/contatos', (req,res)=>res.send("página de contatos"));
 
-app.use('/produtos', rotasProdutos);
+//rotas parametrizadas ou rotas dinâmicas
+app.get('/produtos/:id', (req,res)=>{
+    let {id} = req.params
+    res.send("eu tenho um produto com o id:", id)
+});
 
 //criando servidor usando express   
 app.listen(2000,()=> console.log("servidor rodando na porta 2000...")
