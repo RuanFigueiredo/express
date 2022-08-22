@@ -11,7 +11,7 @@ app.get('/', (req,res)=>res.send("Olá mundo"));
 app.get('/contatos', (req,res)=>res.send("página de contatos"));
 
 //rotas parametrizadas ou rotas dinâmicas
-app.get('/produtos/:id', (req,res)=>{
+app.get('/produtos/:id?', (req,res)=>{
     let {id} = req.params;
     res.send("eu tenho o produto com o id: " +   id)
 });
