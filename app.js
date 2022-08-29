@@ -1,6 +1,6 @@
 //importando o express
 const express = require('express');
-const rotasProdutos = require('./routes'); 
+const rotasProdutos = require('./rotas/rotasProdutos'); 
 let app = express();
 
 
